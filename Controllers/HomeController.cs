@@ -16,7 +16,6 @@ namespace Menu.Controllers
         public IActionResult Index()
         {
             return View();
-            
         }
 
         public IActionResult Privacy()
