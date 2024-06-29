@@ -10,7 +10,7 @@ namespace Menu.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
-            _logger = logger;
+            _logger = logger; // this is comment
         }
 
         public IActionResult Index()
