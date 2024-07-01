@@ -1,15 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using Menu.Data;
 
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-WebApplication.CreateBuilder(args).Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews();
 
-WebApplication.CreateBuilder(args).Services.AddDbContext<MenuContext>(options =>
-    options.UseSqlServer(WebApplication.CreateBuilder(args).Configuration.GetConnectionString("DefaultConnectionString")));
+builder.Services.AddDbContext<MenuContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
 
-var app = WebApplication.CreateBuilder(args).Build();
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
